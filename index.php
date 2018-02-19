@@ -62,7 +62,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
     $formulaireOK = !$error;
 
     if ($error) {
-        header("Location: index.php?error=&nom={$nom}&prenom={$prenom}&numeroDeTelephone={$numeroDeTelephone}&nbDeCalifornien={$nbDeCalifornien}&nbDeBoston={$nbDeBoston}&nbDeSaumon={$nbDeSaumon}&nbDAvocat={$nbDAvocat}&nbDOmelette{$nbDeOmelette}", true, 303);
+
     } else {
         $text = $nom . "," .
             $prenom . "," .
@@ -71,9 +71,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
             $nbDeBoston . "," .
             $nbDeSaumon . "," .
             $nbDAvocat . "," .
-            $nbDeOmelette . "\n" .
+            $nbDeOmelette . "\n" ;
             file_put_contents("sauvegarde.csv", $text);
-        header("Location: index.php?success=&nom={$nom}&prenom={$prenom}&numeroDeTelephone={$numeroDeTelephone}&nbDeCalifornien={$nbDeCalifornien}&nbDeBoston={$nbDeBoston}&nbDeSaumon={$nbDeSaumon}&nbDAvocat={$nbDAvocat}&nbDOmelette{$nbDeOmelette}", true, 303);
     }
 
 }
@@ -108,7 +107,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
         <br>
     </div>
     <div class="row">
-        <form action="validation.php" method="post">
+        <form action="index.php" method="post">
             <div class="row form-group">
                 <div class="col-lg-3"><label form="Nom">Nom : </label></div>
                 <div class="col-lg-9"><input class="form-control" type="text" id="Nom" name="Nom"
@@ -125,6 +124,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
                                              name="numeroDeTelephone" value="<?php echo $numeroDeTelephone; ?>">
                 </div>
             </div>
+            <br>
             <div class="row form-group">
                 <div class="col-lg-3"><img src="img/california_roll.png" style="width:200px"></div>
                 <div class="col-lg-3"><label form="Californien"> Californien : </label></div>
