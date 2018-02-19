@@ -7,6 +7,8 @@ function sanitize($data)
 }
 
 
+
+
 //Variables
 $nom = "";
 $prenom = "";
@@ -64,7 +66,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
     $formulaireOK = !$error;
 
     if ($error) {
-        header("Location: index.php?error=&nom={$nom}&prenom={$prenom}&numeroDeTelephone={$numeroDeTelephone}&nbDeCalifornien={$nbDeCalifornien}&nbDeBoston={$nbDeBoston}&nbDeSaumon={$nbDeSaumon}&nbDAvocat={$nbDAvocat}&nbDOmelette{$nbDeOmelette}", true, 303);
+
     } else {
         $text = $nom . "," .
             $prenom . "," .
@@ -73,9 +75,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
             $nbDeBoston . "," .
             $nbDeSaumon . "," .
             $nbDAvocat . "," .
-            $nbDeOmelette . "\n" .
+            $nbDeOmelette . "\n";
             file_put_contents("sauvegarde.txt", $text);
-        header("Location: index.php?success=&nom={$nom}&prenom={$prenom}&numeroDeTelephone={$numeroDeTelephone}&nbDeCalifornien={$nbDeCalifornien}&nbDeBoston={$nbDeBoston}&nbDeSaumon={$nbDeSaumon}&nbDAvocat={$nbDAvocat}&nbDOmelette{$nbDeOmelette}", true, 303);
     }
 
 }

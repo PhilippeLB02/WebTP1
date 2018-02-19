@@ -5,6 +5,12 @@ function sanitize($data)
     return htmlspecialchars(stripslashes(trim($data)));
 }
 
+function redirect($url)
+{
+    header('location : '.$url);
+    exit();
+}
+
 //Variables
 $nom = "";
 $prenom = "";
@@ -127,31 +133,31 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
             <br>
             <div class="row form-group">
                 <div class="col-lg-3"><img src="img/california_roll.png" style="width:200px"></div>
-                <div class="col-lg-3"><label form="Californien"> Californien : </label></div>
+                <div class="col-lg-3"><label form="Californien">Maki californien 6$ : </label></div>
                 <div class="col-lg-6"><input class="form-control" type="text" id="nbDeCalifornien"
                                              name="nbDeCalifornien" value="<?php echo $nbDeCalifornien; ?>"></div>
             </div>
             <div class="row form-group">
                 <div class="col-lg-3"><img src="img/boston_roll.png" style="width:200px"></div>
-                <div class="col-lg-3"><label form="Boston"> Boston : </label></div>
+                <div class="col-lg-3"><label form="Boston">Maki boston 7$ : </label></div>
                 <div class="col-lg-6"><input class="form-control" type="text" id="nbDeBoston" name="nbDeBoston"
                                              value="<?php echo $nbDeBoston; ?>"></div>
             </div>
             <div class="row form-group">
                 <div class="col-lg-3"><img src="img/sashimi.png" style="width:200px"></div>
-                <div class="col-lg-3"><label form="Saumon"> Saumon : </label></div>
+                <div class="col-lg-3"><label form="Saumon">Sashimi saumon 4$ : </label></div>
                 <div class="col-lg-6"><input class="form-control" type="text" id="nbDeSaumon" name="nbDeSaumon"
                                              value="<?php echo $nbDeSaumon; ?>"></div>
             </div>
             <div class="row form-group">
                 <div class="col-lg-3"><img src="img/nigris.png" style="width:200px"></div>
-                <div class="col-lg-3"><label form="Avocat"> Avocat : </label></div>
+                <div class="col-lg-3"><label form="Avocat">Nigris avocat 3$ : </label></div>
                 <div class="col-lg-6"><input class="form-control" type="text" id="nbDAvocat" name="nbDAvocat"
                                              value="<?php echo $nbDAvocat; ?>"></div>
             </div>
             <div class="row form-group">
                 <div class="col-lg-3"><img src="img/sushi.png" style="width:200px"></div>
-                <div class="col-lg-3"><label form="Omelette"> Omelette : </label></div>
+                <div class="col-lg-3"><label form="Omelette">Sushi omelette 2$ : </label></div>
                 <div class="col-lg-6"><input class="form-control" type="text" id="nbDeOmelette" name="nbDeOmelette"
                                              value="<?php echo $nbDeOmelette; ?>"></div>
             </div>
@@ -176,6 +182,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
                 echo "<div class='ui green message'>".
                     "<div class='header'>Formulaire valide!</div>".
                     "</div>";
+                echo '<script>window.location="validation.php"</script>';
             }
 
             ?>
