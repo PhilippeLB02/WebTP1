@@ -93,7 +93,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
 
 <body>
 
-<div class="col-lg-3">
+<div class="col-lg-3"></div>
     <div class="col-lg-6">
         <div class="row">
             <img src="img/logo.png">
@@ -110,12 +110,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
             <h1>Facture</h1>
         </div>
         <div class="row">
-            <div class="col-lg-4"><p>Californien</p></div>
+            <div class="col-lg-4"><p>Maki californien</p></div>
             <div class="col-lg-5"><p>......................</p></div>
         </div>
     </div>
 
-</div>
 
 </body>
 
